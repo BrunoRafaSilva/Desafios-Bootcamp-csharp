@@ -14,7 +14,9 @@ precoPorHora = decimal.Parse(Console.ReadLine());
 
 Estacionamento estacionamento = new Estacionamento(precoInicial, precoPorHora);
 
-while (true)
+bool parkLoop = true;
+
+while (parkLoop)
 {
     Console.WriteLine("Digite 1 para adicionar um veículo, 2 para remover um veículo, 3 para listar os veículos ou 9 para sair:");
     String opcao = Console.ReadLine() ?? string.Empty;
@@ -32,6 +34,7 @@ while (true)
             break;
         case "9":
             Console.WriteLine("Saindo...");
+            parkLoop = false;
             return;
         default:
             Console.WriteLine("Opção inválida!");
